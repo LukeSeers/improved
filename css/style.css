@@ -1,0 +1,117 @@
+:root{
+    --parallax-scale-start: 0.35;
+    --parallax-scale-end: 0.5;
+}
+
+@media (min-width: 768px) {
+    :root{
+        --parallax-scale-start: 0.55;
+        --parallax-scale-end: 0.75;
+    }
+}
+
+@media (min-width: 1280px) {
+    :root{
+        --parallax-scale-start: 0.75;
+        --parallax-scale-end: 1;
+    }
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Lato",sans-serif;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #162542;
+    background-image: url("https://sourcewhale.com/images/landing-page/hero-ocean-bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom -20px right 0px;
+    background-size: 100%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: -5rem;
+}
+
+.wrapper p{
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding: 0rem 1rem;
+}
+
+.wrapper h1{
+    line-height: 1.5;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 0rem 1rem;
+
+    background: linear-gradient(150deg, #19a2e8 0%, #4b80ee 50%, #417dee 100%);
+    cursor: default;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+}
+
+.parallax {
+    width: max-content;
+    height: max-content;
+    position: relative;
+    perspective: 1px;
+    animation: scale 2s forwards;
+    transition: all .2s ease-out;
+}
+
+.layer {
+    position: absolute;
+    width: 688px;
+    height: 339px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.5s ease-out;
+}
+
+.layer-1 {
+    position: relative;
+    background-image: url('../img/layer1.png');
+    z-index: 1;
+}
+.layer-2 { background-image: url('../img/layer2.png'); z-index: 2; }
+.layer-3 { background-image: url('../img/layer3.png'); z-index: 3; }
+.layer-4 { background-image: url('../img/layer4.png'); z-index: 4; }
+
+.layer-1:after{
+    content: 'Wait!';
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    color: #264a7a;
+    border: none;
+    font-size: 7rem;
+    font-weight: bold;
+}
+
+@keyframes scale {
+    0% {transform: scale(var(--parallax-scale-start));}
+    100% {transform: scale(var(--parallax-scale-end));}
+}
