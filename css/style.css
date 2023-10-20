@@ -47,10 +47,15 @@ section{
 .wrapper p{
     font-weight: 400;
     line-height: 1.5;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     text-align: center;
     padding: 0rem 1rem;
+    margin: 0rem;
+}
+
+.wrapper p strong{
+    color: #ffffff !important;
 }
 
 .wrapper h1{
@@ -58,9 +63,8 @@ section{
     color: #fff;
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 0px;
     padding: 0rem 1rem;
-
+    margin: 1rem 0rem;
     background: linear-gradient(150deg, #19a2e8 0%, #4b80ee 50%, #417dee 100%);
     cursor: default;
     font-weight: 700;
@@ -80,6 +84,7 @@ section{
     perspective: 1px;
     animation: scale 2s forwards;
     transition: all .2s ease-out;
+    margin-top: 4.5rem;
 }
 
 .layer {
